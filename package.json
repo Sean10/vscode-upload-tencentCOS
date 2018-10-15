@@ -1,0 +1,76 @@
+{
+    "name": "vscode-upload-tencentcos",
+    "displayName": "vscode-upload-tencentCOS",
+    "description": "vscode upload image to tencent COS for markdown",
+    "version": "0.0.1",
+    "publisher": "sean10",
+    "engines": {
+        "vscode": "^1.28.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:markdown"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.tencentCOS.upload",
+                "title": "TencentCOS upload"
+            },
+            {
+                "command": "extension.tencentCOS.select",
+                "title": "TencentCOS select"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Tencent COS configuration",
+            "properties": {
+                "tencentCOS.enable": {
+                    "type": "boolean",
+                    "default": "false",
+                    "description": "腾讯云COS上传工具开关"
+                },
+                "tencentCOS.secret_id": {
+                    "type": "string",
+                    "default": "",
+                    "description": "一个有效的腾讯云Secret ID签名授权"
+                },
+                "tencentCOS.secret_key": {
+                    "type": "string",
+                    "default": "",
+                    "description": "一个有效的腾讯云Secret Key签名授权"
+                },
+                "tencentCOS.bucket": {
+                    "type": "string",
+                    "default": "",
+                    "description": ""
+                },
+                "tencentCOS.region": {
+                    "type": "string",
+                    "default": "",
+                    "description": ""
+                }
+            }
+        }
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^8.10.25",
+        "eslint": "^4.11.0",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.21"
+    },
+    "dependencies": {
+        "cos-nodejs-sdk-v5": "^2.4.11",
+        "fs": "0.0.1-security",
+        "request": "^2.88.0"
+    }
+}
