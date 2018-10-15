@@ -1,7 +1,7 @@
 {
     "name": "vscode-upload-tencentcos",
     "displayName": "vscode-upload-tencentCOS",
-    "description": "vscode upload image to tencent COS for markdown",
+    "description": "vscode extension to upload image into tencent COS for markdown",
     "version": "0.0.1",
     "publisher": "sean10",
     "engines": {
@@ -72,5 +72,10 @@
         "cos-nodejs-sdk-v5": "^2.4.11",
         "fs": "0.0.1-security",
         "request": "^2.88.0"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Sean10/vscode-upload-tencentCOS.git"
     }
 }
