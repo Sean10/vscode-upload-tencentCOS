@@ -71,7 +71,8 @@
     "dependencies": {
         "cos-nodejs-sdk-v5": "^2.4.11",
         "fs": "0.0.1-security",
-        "request": "^2.88.0"
+        "request": "^2.88.0",
+        "uuid": "^3.3.2"
     },
     "license": "MIT",
     "repository": {
