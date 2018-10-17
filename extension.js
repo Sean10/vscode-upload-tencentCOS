@@ -1,25 +1,29 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 const path = require('path')
 const COSUpload = require('./lib/upload')
+
 
 const upload = (config, fsPath) => {
     if (!fsPath) return
     console.log(fsPath)
 
+
+
     const editor = vscode.window.activeTextEditor
     const mdFilePath = editor.document.fileName
     const mdFileName = path.win32.basename(mdFilePath, path.extname(mdFilePath))
 
-    return COSUpload(config, fsPath, mdFileName).then(({ name, url}) => {
-        console.log('Upload success')
+    return COSUpload(config, fsPath, mdFileName).then(({name, url}) => {
+        console.log('Succeed to upload image.')
 
         const img = `![${name}](${url})`
 
         editor.edit(textEditorEdit => {
             textEditorEdit.insert(editor.selection.active, img)
         })
+    }).catch(error => {
+        // console.log(error)
+        vscode.window.showErrorMessage("Failed to upload image. Error:" + error)
     })
 }
 
@@ -43,12 +47,12 @@ function activate(context) {
     let inputUpload = vscode.commands.registerCommand('extension.tencentCOS.upload', () => {
         
         if (!vscode.window.activeTextEditor) {
-            vscode.window.showErrorMessage("没有打开编辑窗口")
+            vscode.window.showErrorMessage("No editable window is open.")
             return 
         }
 
         vscode.window.showInputBox({
-            placeHolder: '请输入一个图片地址'
+            placeHolder: 'Please input the image path'
         })
         .then(fsPath => upload(config, fsPath), error)
     })

@@ -47,12 +47,12 @@
                 "tencentCOS.bucket": {
                     "type": "string",
                     "default": "",
-                    "description": ""
+                    "description": "一个有效的存储桶名称"
                 },
                 "tencentCOS.region": {
                     "type": "string",
                     "default": "",
-                    "description": ""
+                    "description": "Bucket所在区域"
                 }
             }
         }
