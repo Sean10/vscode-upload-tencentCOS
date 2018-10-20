@@ -2,11 +2,10 @@
 All notable changes to the "vscode-upload-tencentcos" extension will be documented in this file.
 
 ## [Unreleased]
-* 考虑在markdown文件下的相对路径的图片被上传
-* ‎显示无此图片的error信息
-* ‎根据return状态码进行错误显示
+* support upload online message(http)
 
 ## 0.2.0 / Unreleased
+* support uploading image to the relative path of the mdfile
 * add local upload error message
     * add error: local file is not available when using upload according path
     * add error: fail to upload according to network error or config error.

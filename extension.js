@@ -7,13 +7,10 @@ const upload = (config, fsPath) => {
     if (!fsPath) return
     console.log(fsPath)
 
-
-
     const editor = vscode.window.activeTextEditor
-    const mdFilePath = editor.document.fileName
-    const mdFileName = path.win32.basename(mdFilePath, path.extname(mdFilePath))
+    const mdFilePath = editor.document.uri.fsPath
 
-    return COSUpload(config, fsPath, mdFileName).then(({name, url}) => {
+    return COSUpload(config, fsPath, mdFilePath).then(({name, url}) => {
         console.log('Succeed to upload image.')
 
         const img = `![${name}](${url})`
