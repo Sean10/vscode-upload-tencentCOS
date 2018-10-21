@@ -2,9 +2,12 @@
 All notable changes to the "vscode-upload-tencentcos" extension will be documented in this file.
 
 ## [Unreleased]
+* support upload online image without generating a temp local image.
+
+## 0.3.0 / Unreleased
 * support upload online message(http)
 
-## 0.2.0 / Unreleased
+## 0.2.0 / 2018-10-20
 * support uploading image to the relative path of the mdfile
 * add local upload error message
     * add error: local file is not available when using upload according path
