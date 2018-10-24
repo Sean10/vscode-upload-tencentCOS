@@ -25,6 +25,24 @@
                 "title": "TencentCOS select"
             }
         ],
+        "keybindings": [
+            {
+                "command": "extension.tencentCOS.upload",
+                "key": "alt+y",
+                "mac": "alt+y",
+                "linux": "alt+y",
+                "win": "alt+y",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "extension.tencentCOS.select",
+                "key": "alt+u",
+                "mac": "alt+u",
+                "win": "alt+u",
+                "linux": "alt+u",
+                "when": "editorTextFocus"
+            }
+        ],
         "configuration": {
             "type": "object",
             "title": "Tencent COS configuration",
