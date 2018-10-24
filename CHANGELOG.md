@@ -4,6 +4,9 @@ All notable changes to the "vscode-upload-tencentcos" extension will be document
 ## [Unreleased]
 * support upload online image without generating a temp local image.
 
+## 0.3.1 / 2018-10-24
+* support keybinding
+
 ## 0.3.0 / 2018-10-21
 * support upload online message(http)
 
