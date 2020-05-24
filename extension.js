@@ -56,7 +56,7 @@ function activate(context) {
 
     let selectUpload = vscode.commands.registerCommand('extension.tencentCOS.select', () => {
         vscode.window.showOpenDialog({
-            filters: {'Images': ['png', 'jpg', 'gif', 'bmp']}
+            filters: {'Images': ['png', 'jpg', 'gif', 'bmp', 'jpeg', 'svg', 'webp']}
         }).then(result => {
             console.log(result)
             if (result) {
